@@ -57,9 +57,16 @@ namespace Workshop1.Classes
                 stream.Write(data, 0, data.Length);
             }
 
-            var response = (HttpWebResponse)request.GetResponse();
 
-            return response;
+            try
+            {
+                var response = (HttpWebResponse)request.GetResponse();
+                return response;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
     }
 }

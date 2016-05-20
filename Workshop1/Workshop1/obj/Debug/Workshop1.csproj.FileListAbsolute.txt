@@ -12,3 +12,6 @@ C:\Users\joint\rendu\Workshop1\Workshop1\obj\Debug\Workshop1.Properties.Resource
 C:\Users\joint\rendu\Workshop1\Workshop1\obj\Debug\Workshop1.csproj.GenerateResource.Cache
 C:\Users\joint\rendu\Workshop1\Workshop1\obj\Debug\Workshop1.exe
 C:\Users\joint\rendu\Workshop1\Workshop1\obj\Debug\Workshop1.pdb
+C:\Users\joint\rendu\RocketLeagueStats\Workshop1\Workshop1\bin\Debug\Workshop1.exe.config
+C:\Users\joint\rendu\RocketLeagueStats\Workshop1\Workshop1\obj\Debug\Workshop1.exe
+C:\Users\joint\rendu\RocketLeagueStats\Workshop1\Workshop1\obj\Debug\Workshop1.pdb

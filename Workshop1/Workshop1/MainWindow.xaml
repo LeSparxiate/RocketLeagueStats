@@ -57,10 +57,151 @@
                 <!-- Colone 4 -->
             </Grid.ColumnDefinitions>
 
-            <ScrollViewer Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="4">
-                <TextBlock Text="Texte ICI" TextAlignment="Left" Name="ChampTexte" Background="#FFC7C7C7" Margin="10" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-            </ScrollViewer>
-            <Button Content="Bouton Test" Grid.Column="2" Grid.Row="4" Click="Button_Click" Width="80" Height="25"></Button>
+            <TabControl Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="5">
+                <TabItem Header="Leaderboard">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <!-- Ligne 0 -->
+                            <RowDefinition Height="*"/>
+                            <!-- Ligne 1 -->
+                            <RowDefinition Height="*"/>
+                            <!-- Ligne 2 -->
+                            <RowDefinition Height="*"/>
+                            <!-- Ligne 3 -->
+                            <RowDefinition Height="*"/>
+                            <!-- Ligne 4 -->
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <!-- Colone 0 -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Colone 1 -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Colone 2 -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Colone 3 -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Colone 4 -->
+                        </Grid.ColumnDefinitions>
+                        <ScrollViewer Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="4">
+                            <!--<TextBlock Text="Texte ICI" TextAlignment="Left" Name="ChampTexte" Background="#FFC7C7C7" Margin="10" ScrollViewer.VerticalScrollBarVisibility="Auto"></TextBlock>-->
+                            <DataGrid AutoGenerateColumns="False" Name="DataGridTest" CanUserAddRows="False" ItemsSource="{Binding TestBinding}">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Rank" IsReadOnly="True" Binding="{Binding Path=rank}" Width="auto"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Username" IsReadOnly="True" Binding="{Binding Path=UserName}" Width="*"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="MMR" IsReadOnly="True"  Binding="{Binding Path=MMR}" Width="*"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Division" IsReadOnly="True"  Binding="{Binding Path=Division}" Width="auto"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="Platform" IsReadOnly="True"  Binding="{Binding Path=Platform}" Width="auto"></DataGridTextColumn>
+                                    <DataGridTextColumn Header="SteamID" IsReadOnly="True"  Binding="{Binding Path=SteamID}" Width="*"></DataGridTextColumn>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </ScrollViewer>
+                        <!--<Button Content="Population" Grid.Column="3" Grid.Row="4" Click="Button1_Click" Width="80" Height="25"/>-->
+                        <!--<Button Content="User Rank" Grid.Column="3" Grid.Row="4" Click="Button2_Click" Width="80" Height="25"></Button>-->
+                        <StackPanel Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <CheckBox Content="Steam" x:Name="Steam"></CheckBox>
+                            <CheckBox Content="PSN" x:Name="PSN"></CheckBox>
+                        </StackPanel>
+                        <ComboBox Grid.Column="1" Grid.Row="4" Width="80" Height="25" x:Name="gametype">
+                            <ComboBoxItem IsSelected="True">1v1</ComboBoxItem>
+                            <ComboBoxItem>2v2</ComboBoxItem>
+                            <ComboBoxItem>3v3 Solo</ComboBoxItem>
+                            <ComboBoxItem>3v3</ComboBoxItem>
+                        </ComboBox>
+                        <Button Content="LeaderBoard" Grid.Column="2" Grid.Row="4" Click="Button3_Click" Width="80" Height="25"></Button>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Steam User">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <!-- Ligne 0 -->
+                            <RowDefinition Height="*"/>
+                            <!-- Ligne 1 -->
+                            <RowDefinition Height="*"/>
+                            <!-- Ligne 2 -->
+                            <RowDefinition Height="*"/>
+                            <!-- Ligne 3 -->
+                            <RowDefinition Height="*"/>
+                            <!-- Ligne 4 -->
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <!-- Colone 0 -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Colone 1 -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Colone 2 -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Colone 3 -->
+                            <ColumnDefinition Width="*"/>
+                            <!-- Colone 4 -->
+                        </Grid.ColumnDefinitions>
+
+                        <!--<Button Content="User Rank" Grid.Column="0" Grid.Row="0" Click="Button2_Click" Width="80" Height="25"></Button>-->
+                        <Button Grid.Column="1" Grid.Row="0" x:Name="SearchPlayer" Width="80" Height="25" Content="Search" Click="Button2_Click"/>
+                        <TextBox Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" Height="25" Width="180" x:Name="SteamID" VerticalContentAlignment="Center"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="UserName" x:Name="UserName" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="1v1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="2v2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="3v3 Solo" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="5" Grid.Column="0" Text="3v3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="2" Grid.Column="5" Text="MMR" x:Name="MMR1v1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" Text="Division" x:Name="Division1v1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="3" Grid.Column="5" Text="MMR" x:Name="MMR2v2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" Text="Division" x:Name="Division2v2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="4" Grid.Column="5" Text="MMR" x:Name="MMR3v3solo" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="4" Grid.Column="1" Text="Division" x:Name="Division3v3solo" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="5" Grid.Column="5" Text="MMR" x:Name="MMR3v3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="5" Grid.Column="1" Text="Division" x:Name="Division3v3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Grid>
+                </TabItem>
+                <!--<TabItem Header="Servers Status">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="1" Text="Server 1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" Text="Server 2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" Text="Server 3" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" Text="Server 4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="4" Grid.Column="1" Text="Server 5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="5" Grid.Column="1" Text="Server 6" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        
+                        <TextBlock Grid.Row="0" Grid.Column="3" Text="Server 7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Grid.Column="3" Text="Server 8" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="2" Grid.Column="3" Text="Server 9" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="3" Grid.Column="3" Text="Server 10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="4" Grid.Column="3" Text="Server 11" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="5" Grid.Column="3" Text="Server 12" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                        <TextBlock Grid.Row="0" Grid.Column="5" Text="Server 13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="1" Grid.Column="5" Text="Server 14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="2" Grid.Column="5" Text="Server 15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="3" Grid.Column="5" Text="Server 16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="4" Grid.Column="5" Text="Server 17" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBlock Grid.Row="5" Grid.Column="5" Text="Server 18" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Grid>
+                </TabItem>-->
+            </TabControl>
         </Grid>
     </Grid>
 </Window>
