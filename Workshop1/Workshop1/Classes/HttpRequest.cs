@@ -23,7 +23,6 @@ namespace Workshop1.Classes
         /// <returns>Result of the request</returns>
         public static HttpWebResponse PostRequest(string link, string[] parameters = null, string[] headers = null, string[] h_data = null)
         {
-            //string ret;
             var postData = "";
 
             var request = (HttpWebRequest)WebRequest.Create(link);
