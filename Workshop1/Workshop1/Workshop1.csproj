@@ -64,10 +64,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\DynamicXml.cs" />
     <Compile Include="Classes\HttpRequest.cs" />
     <Compile Include="Classes\PlayerStats.cs" />
     <Compile Include="Classes\Population.cs" />
     <Compile Include="Classes\RLApi.cs" />
+    <Compile Include="Classes\Steam.cs" />
     <Compile Include="Classes\Tools.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

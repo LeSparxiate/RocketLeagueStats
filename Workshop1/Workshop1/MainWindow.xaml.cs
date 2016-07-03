@@ -81,6 +81,7 @@ namespace Workshop1
                     Thread.CurrentThread.IsBackground = true;
                     try
                     {
+                        idSteam = Classes.Steam.getIdByName(idSteam);
                         PlayerStats[][] body = api.getAllPlayerRankingSteam(idSteam);
                         int size = body.Count();
                         for (int i = 0; i < body.Count(); i++)

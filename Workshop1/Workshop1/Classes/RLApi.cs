@@ -51,6 +51,8 @@ namespace Workshop1.Classes
             {
                 HttpWebResponse ret = HttpRequest.PostRequest(authURL, parameters, headers, h_data);
                 this.sessionID = ret.Headers.Get("sessionid");
+                if (this.sessionID == null)
+                    throw new Exception("\nSessionID is NULL.");
             }
             catch (Exception e)
             {
